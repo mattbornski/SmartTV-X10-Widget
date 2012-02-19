@@ -53,6 +53,21 @@ var MainView = new KONtx.Class({
 			}
 		}).appendTo(this);
 		
+		this.controls.button4 = new KONtx.control.TextButton({
+			label: "Load Full View",
+			guid: "button4",
+			events: {
+				onSelect: function(event) {
+					KONtx.application.loadView('view-Full');
+				}
+			},
+			styles: {
+				width: Theme.viewSpecs.SIDE_BAR.width,
+				height: KONtx.utility.scale(35),
+				vOffset: KONtx.utility.scale(70),
+			}
+		}).appendTo(this);
+		
 		new KONtx.control.EmptySpace({
 			styles: {
 				vOffset: KONtx.utility.scale(105),
