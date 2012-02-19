@@ -2,7 +2,7 @@
 <metadata>
     <name>Mashup</name>
     <version>0.1.0</version>
-    <identifier>com.yahoo.widgets.tv.snippetsample</identifier>
+    <identifier>com.bornski.mashupwidget</identifier>
     <author name="Matt Bornski" href="http://bornski.com/matt/" />
     <copyright>2012</copyright>
     <description>Mashup</description>
@@ -14,4 +14,5 @@
     </security>
     <image usage="1920x1080.logo" src="Images/1920x1080/logo.png"/>
     <image usage="960x540.logo" src="Images/960x540/logo.png"/>
+    <!-- <image usage="960x540.icon" src="Images/960x540/icon.png"/> -->
 </metadata>

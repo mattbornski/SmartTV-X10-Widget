@@ -1,5 +1,5 @@
-var MainView = new KONtx.Class({
-	ClassName: 'MainView',
+var FullView = new KONtx.Class({
+	ClassName: 'FullView',
 	
 	Extends: KONtx.system.SidebarView,
 
