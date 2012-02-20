@@ -40,7 +40,7 @@ var MainView = new KONtx.Class({
 	  var vOffset = 0;
 	  for (var index in buttons) {
 	    var options = buttons[index];
-	    if (options[guid] === undefined) {
+	    if (options['guid'] === undefined) {
 	      options['guid'] = 'button' + index;
 	    }
 	    if (options['styles'] === undefined) {
