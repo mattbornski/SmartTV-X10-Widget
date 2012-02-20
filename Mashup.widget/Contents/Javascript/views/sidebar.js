@@ -8,7 +8,7 @@ var MainView = new KONtx.Class({
 	Extends: KONtx.system.SidebarView,
 
 	createView: function() {
-	  var buttons = [{
+	  var buttons = [/*{
 	    label: 'Load Subview #1 w/ foo = 33',
 	    events: {
 				onSelect: function(event) {
@@ -29,7 +29,7 @@ var MainView = new KONtx.Class({
       		KONtx.application.loadView('view-Sub2');
 				}
       }
-  	}, {
+  	}, */{
       label: "Load Full View",
 			events: {
       	onSelect: function(event) {

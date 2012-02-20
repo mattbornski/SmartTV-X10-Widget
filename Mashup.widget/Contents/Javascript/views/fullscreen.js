@@ -1,7 +1,7 @@
 var FullView = new KONtx.Class({
 	ClassName: 'FullView',
 	
-	Extends: KONtx.system.SidebarView,
+	Extends: KONtx.system.FullscreenView,
 
 	createView: function() {
 		this.controls.button1 = new KONtx.control.TextButton({
