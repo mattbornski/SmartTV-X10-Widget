@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<metadata>
+    <name>X10</name>
+    <version>0.1.0</version>
+    <identifier>com.bornski.x10widget</identifier>
+    <author name="Matt Bornski" href="http://bornski.com/matt/" />
+    <copyright>2012</copyright>
+    <description>X10</description>
+    <platform minVersion="4.6.1" />
+    <security>
+        <filesystem>full</filesystem>
+        <command>true</command>
+        <http>all</http>
+    </security>
+    <image usage="1920x1080.logo" src="Images/1920x1080/logo.png"/>
+    <image usage="960x540.logo" src="Images/960x540/logo.png"/>
+    <!-- <image usage="960x540.icon" src="Images/960x540/icon.png"/> -->
+</metadata>
