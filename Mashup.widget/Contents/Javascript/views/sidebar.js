@@ -8,70 +8,61 @@ var MainView = new KONtx.Class({
 	Extends: KONtx.system.SidebarView,
 
 	createView: function() {
-		this.controls.button1 = new KONtx.control.TextButton({
-			label: "Load Subview #1 w/ foo = 33",
-			guid: "button1",
-			events: {
+	  var buttons = [{
+	    label: 'Load Subview #1 w/ foo = 33',
+	    events: {
 				onSelect: function(event) {
 					KONtx.application.loadView('view-Sub1', { foo: 33 });
 				}
 			},
-			styles: {
-				width: Theme.viewSpecs.SIDE_BAR.width,
-				height: KONtx.utility.scale(35),
-				vOffset: 0,
-			}
-		}).appendTo(this);
-		
-		this.controls.button2 = new KONtx.control.TextButton({
-			label: "Load Subview #1 w/ foo = 42",
-			guid: "button2",
-			events: {
-				onSelect: function(event) {
-					KONtx.application.loadView('view-Sub1', { foo: 42 });
-				}
-			},
-			styles: {
-				width: Theme.viewSpecs.SIDE_BAR.width,
-				height: KONtx.utility.scale(35),
-				vOffset: KONtx.utility.scale(35),
-			}
-		}).appendTo(this);
-		
-		this.controls.button3 = new KONtx.control.TextButton({
+	  }, {
+		  label: "Load Subview #1 w/ foo = 42",
+		  events: {
+  		  onSelect: function(event) {
+  			  KONtx.application.loadView('view-Sub1', { foo: 42 });
+  		  }
+  		},
+  	}, {
 			label: "Load Subview #2",
-			guid: "button3",
-			events: {
-				onSelect: function(event) {
-					KONtx.application.loadView('view-Sub2');
+  		events: {
+    		onSelect: function(event) {
+      		KONtx.application.loadView('view-Sub2');
 				}
-			},
-			styles: {
-				width: Theme.viewSpecs.SIDE_BAR.width,
-				height: KONtx.utility.scale(35),
-				vOffset: KONtx.utility.scale(70),
-			}
-		}).appendTo(this);
-		
-		this.controls.button4 = new KONtx.control.TextButton({
-			label: "Load Full View",
-			guid: "button4",
+      }
+  	}, {
+      label: "Load Full View",
 			events: {
-				onSelect: function(event) {
-					KONtx.application.loadView('view-Full');
-				}
-			},
-			styles: {
-				width: Theme.viewSpecs.SIDE_BAR.width,
-				height: KONtx.utility.scale(35),
-				vOffset: KONtx.utility.scale(70),
-			}
-		}).appendTo(this);
-		
+      	onSelect: function(event) {
+  				KONtx.application.loadView('view-Full');
+      	}
+  		},
+    }];
+	  var vOffset = 0;
+	  for (var index in buttons) {
+	    var options = buttons[index];
+	    if (options[guid] === undefined) {
+	      options['guid'] = 'button' + index;
+	    }
+	    if (options['styles'] === undefined) {
+	      options['styles'] = {};
+	    }
+	    if (options['styles']['width'] === undefined) {
+	      options['styles']['width'] = Theme.viewSpecs.SIDE_BAR.width;
+	    }
+	    if (options['styles']['height'] === undefined) {
+	      options['styles']['height'] = KONtx.utility.scale(35);
+	    }
+	    if (options['styles']['vOffset'] === undefined) {
+	      options['styles']['vOffset'] = KONtx.utility.scale(vOffset);
+	    }
+	    // TODO determine actual height in case this was overridden.
+	    vOffset += 35;
+	    this.controls[options['guid']] = new KONtx.control.TextButton(options).appendTo(this);
+	  }
 		new KONtx.control.EmptySpace({
 			styles: {
-				vOffset: KONtx.utility.scale(105),
-				height: Theme.viewSpecs.SIDE_BAR.height - KONtx.utility.scale(105),
+				vOffset: KONtx.utility.scale(vOffset),
+				height: Theme.viewSpecs.SIDE_BAR.height - KONtx.utility.scale(vOffset),
 			},
 		}).appendTo(this);
 	}
