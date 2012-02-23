@@ -8,9 +8,29 @@ var MainView = new KONtx.Class({
 	Extends: KONtx.system.SidebarView,
 
 	createView: function() {
+	  var createDoneHandler = function () {
+	    return function () {
+	      if (this.readyState === 4) {
+          var dialog = new KONtx.dialogs.Alert({
+            title: 'HTTP ' + this.status,
+            message: 'Request complete',
+            buttons: [{
+              label: "Ok",
+              callback: function () {
+                ;
+              }
+            }],
+            cancelCallback: function () {
+              ;
+            }
+          });
+          dialog.show();
+        }
+      }
+	  };
 	  var do = function (house, unit. command) {
 	    var request = new XMLHttpRequest();
-      request.onreadystatechange = getReadyStateHandler();
+      request.onreadystatechange = createDoneHandler();
       request.open("POST", "http://192.168.10.77/N/2/on");
       request.timeout = connection_timeout;
       start_time = animator.milliseconds;
