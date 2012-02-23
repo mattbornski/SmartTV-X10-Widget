@@ -4,7 +4,7 @@ var MainView = new KONtx.Class({
 	Extends: KONtx.system.SidebarView,
 
 	createView: function () {
-	  /*var createDoneHandler = function () {
+	  /*var createX10ResponseHandler = function () {
 	    return function () {
 	      if (this.readyState === 4) {
           var dialog = new KONtx.dialogs.Alert({
@@ -24,9 +24,9 @@ var MainView = new KONtx.Class({
         }
       }
 	  };*/
-	  var do = function (house, unit, command) {
+	  var sendX10Request = function (house, unit, command) {
 	    //var request = new XMLHttpRequest();
-      //request.onreadystatechange = createDoneHandler();
+      //request.onreadystatechange = createX10ResponseHandler();
       //request.open('POST', 'http://192.168.10.77/' + house + '/' + unit + '/' + command);
       //request.timeout = 10000;
       //request.send();
@@ -35,14 +35,14 @@ var MainView = new KONtx.Class({
 	    label: 'Turn on N2',
 	    events: {
 				onSelect: function (event) {
-				  //do('N', '2', 'on');
+				  //sendX10Request('N', '2', 'on');
 				},
 			},
 	  }, {
 		  label: "Turn off N2",
 		  events: {
   		  onSelect: function (event) {
-  			  //do('N', '2', 'off');
+  			  //sendX10Request('N', '2', 'off');
   		  },
   		},
   	}];
