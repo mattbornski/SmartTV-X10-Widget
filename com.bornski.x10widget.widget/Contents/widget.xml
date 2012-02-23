@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <metadata>
     <name>X10</name>
-    <version>0.1.0</version>
+    <version>0.1.1</version>
     <identifier>com.bornski.x10widget</identifier>
     <author name="Matt Bornski" href="http://bornski.com/matt/" />
     <copyright>2012</copyright>
