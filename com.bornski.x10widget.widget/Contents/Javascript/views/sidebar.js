@@ -4,31 +4,9 @@ var MainView = new KONtx.Class({
 	Extends: KONtx.system.SidebarView,
 
 	createView: function () {
-	  var createX10ResponseHandler = function () {
-	    return function () {
-	      if (this.readyState === 4) {
-          var dialog = new KONtx.dialogs.Alert({
-            title: 'HTTP ' + this.status,
-            message: 'Request complete',
-            buttons: [{
-              label: "Ok",
-              callback: function () {
-                ;
-              }
-            }],
-            cancelCallback: function () {
-              ;
-            }
-          });
-          dialog.show();
-        }
-      }
-	  };
 	  var sendX10Request = function (house, unit, command) {
 	    var request = new XMLHttpRequest();
-      request.onreadystatechange = createX10ResponseHandler();
-      request.open('POST', 'http://192.168.10.77/' + house + '/' + unit + '/' + command);
-      request.timeout = 10000;
+      request.open('POST', 'http://192.168.10.77/' + house + '/' + unit + '/' + command, true);
       request.send();
 	  };
 	  var buttons = [{
