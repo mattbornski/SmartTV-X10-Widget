@@ -35,14 +35,14 @@ var MainView = new KONtx.Class({
 	    label: 'Turn on N2',
 	    events: {
 				onSelect: function (event) {
-				  //sendX10Request('N', '2', 'on');
+				  sendX10Request('N', '2', 'on');
 				},
 			},
 	  }, {
 		  label: "Turn off N2",
 		  events: {
   		  onSelect: function (event) {
-  			  //sendX10Request('N', '2', 'off');
+  			  sendX10Request('N', '2', 'off');
   		  },
   		},
   	}];
