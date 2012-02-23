@@ -4,7 +4,7 @@ var MainView = new KONtx.Class({
 	Extends: KONtx.system.SidebarView,
 
 	createView: function() {
-	  var createDoneHandler = function () {
+	  /*var createDoneHandler = function () {
 	    return function () {
 	      if (this.readyState === 4) {
           var dialog = new KONtx.dialogs.Alert({
@@ -23,11 +23,11 @@ var MainView = new KONtx.Class({
           dialog.show();
         }
       }
-	  };
+	  };*/
 	  var do = function (house, unit, command) {
 	    var request = new XMLHttpRequest();
-      request.onreadystatechange = createDoneHandler();
-      request.open("POST", "http://192.168.10.77/N/2/on");
+      //request.onreadystatechange = createDoneHandler();
+      request.open('POST', 'http://192.168.10.77/' + house + '/' + unit + '/' + command);
       request.timeout = 10000;
       request.send();
 	  };
