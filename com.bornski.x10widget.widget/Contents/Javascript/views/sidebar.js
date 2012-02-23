@@ -27,21 +27,21 @@ var MainView = new KONtx.Class({
 	  var do = function (house, unit, command) {
 	    var request = new XMLHttpRequest();
       //request.onreadystatechange = createDoneHandler();
-      request.open('POST', 'http://192.168.10.77/' + house + '/' + unit + '/' + command);
-      request.timeout = 10000;
-      request.send();
+      //request.open('POST', 'http://192.168.10.77/' + house + '/' + unit + '/' + command);
+      //request.timeout = 10000;
+      //request.send();
 	  };
 	  var buttons = [{
 	    label: 'Turn on N2',
 	    events: {
-				onSelect: function(event) {
+				onSelect: function (event) {
 				  //do('N', '2', 'on');
 				},
 			},
 	  }, {
 		  label: "Turn off N2",
 		  events: {
-  		  onSelect: function(event) {
+  		  onSelect: function (event) {
   			  //do('N', '2', 'off');
   		  },
   		},
