@@ -1,14 +1,10 @@
-/**
- * @author jstone
- */
-
 var MainView = new KONtx.Class({
 	ClassName: 'MainView',
 	
 	Extends: KONtx.system.SidebarView,
 
 	createView: function() {
-	  var createDoneHandler = function () {
+	  /*var createDoneHandler = function () {
 	    return function () {
 	      if (this.readyState === 4) {
           var dialog = new KONtx.dialogs.Alert({
@@ -35,20 +31,20 @@ var MainView = new KONtx.Class({
       request.timeout = connection_timeout;
       start_time = animator.milliseconds;
       request.send();
-	  };
+	  };*/
 	  var buttons = [{
 	    label: 'Turn on N2',
 	    events: {
 				onSelect: function(event) {
-				  do('N', '2', 'on');
-				}
+				  //do('N', '2', 'on');
+				},
 			},
 	  }, {
 		  label: "Turn off N2",
 		  events: {
   		  onSelect: function(event) {
-  			  do('N', '2', 'off');
-  		  }
+  			  //do('N', '2', 'off');
+  		  },
   		},
   	}];
 	  var vOffset = 0;

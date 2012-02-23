@@ -1,7 +1,3 @@
-/**
- * @author jstone
- */
-
 var MainView = new KONtx.Class({
 	ClassName: 'MainView',
 	
