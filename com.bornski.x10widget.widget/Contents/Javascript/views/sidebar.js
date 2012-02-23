@@ -25,11 +25,11 @@ var MainView = new KONtx.Class({
       }
 	  };*/
 	  var sendX10Request = function (house, unit, command) {
-	    //var request = new XMLHttpRequest();
+	    var request = new XMLHttpRequest();
       //request.onreadystatechange = createX10ResponseHandler();
-      //request.open('POST', 'http://192.168.10.77/' + house + '/' + unit + '/' + command);
-      //request.timeout = 10000;
-      //request.send();
+      request.open('POST', 'http://192.168.10.77/' + house + '/' + unit + '/' + command);
+      request.timeout = 10000;
+      request.send();
 	  };
 	  var buttons = [{
 	    label: 'Turn on N2',
